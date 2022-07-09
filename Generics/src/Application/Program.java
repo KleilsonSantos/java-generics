@@ -11,7 +11,6 @@ public class Program {
     public static void main(String[] args) {
         setDefault(US);
         List<Integer> integers = Arrays.asList(10,8,23);
-
         try (Scanner scanner = new Scanner(System.in)) {
             PrintService<Integer> printService = new PrintService<>();
             for (Integer integer: integers) printService.addValue(integer);
