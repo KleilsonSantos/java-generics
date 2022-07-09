@@ -3,29 +3,29 @@ package Services;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PrintService {
+public class PrintService<T> {
 
-    List<Integer> integerList = new ArrayList<>();
+    List<T> generics = new ArrayList<>();
 
-    public void addValue(Integer varInteger){
-        integerList.add(varInteger);
+    public void addValue(T varInteger){
+        generics.add(varInteger);
     }
 
-    public Integer first(){
-        if(integerList.isEmpty()){
-            System.out.println(new IllegalAccessError("List is empty"));
+    public T first(){
+        if(generics.isEmpty()){
+            throw new IllegalAccessError("List is empty");
         }
-        return integerList.get(0);
+        return generics.get(0);
     }
 
     public void print(){
-        if(integerList.isEmpty()){
+        if(generics.isEmpty()){
             System.out.println("List is empty");
         }
-        var one = integerList.get(0);
+        var one = generics.get(0);
         System.out.print("[ " + one);
-        for (int i = 1; i < integerList.size(); i++) {
-            System.out.print(", " + integerList.get(i));
+        for (int i = 1; i < generics.size(); i++) {
+            System.out.print(", " + generics.get(i));
         }
         System.out.println(" ]");
     }
