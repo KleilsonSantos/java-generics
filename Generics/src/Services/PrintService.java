@@ -1,14 +1,13 @@
 package Services;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
-public class PrintService<T> {
+public class PrintService<T>{
 
-    private List<T> generics = new ArrayList<>();
+    private final List<T> generics = new ArrayList<>();
 
-    public void addValue(T varInteger){
-        generics.add(varInteger);
+    public void addValue(T value){
+        generics.add(value);
     }
 
     public T first(){
@@ -20,7 +19,7 @@ public class PrintService<T> {
 
     public void print() {
         if(generics.isEmpty()){
-         throw new IllegalStateException("List is empty");
+            throw new IllegalStateException("List is empty");
         }else {
             var one = generics.get(0);
             System.out.print("[ " + one);
